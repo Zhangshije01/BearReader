@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.llx.bear.ui.activity.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true">
+        <com.llx.bear.ui.widget.BearCancelScrollViewPager
+            android:id="@+id/vp_main"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:cancel_scroll="true"
+            app:layout_heightPercent="100%"
+            app:layout_widthPercent="100%"></com.llx.bear.ui.widget.BearCancelScrollViewPager>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white">
+
+            <com.llx.bear.ui.widget.BearBottomNavigationBar
+                android:id="@+id/nb_tablayout_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:resource_array_id="@array/main_bottom_bar_icon_array"
+                app:tabBackground="@android:color/transparent"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@android:color/transparent"
+                app:tabIndicatorHeight="0dp"
+                app:tabMode="fixed">
+
+            </com.llx.bear.ui.widget.BearBottomNavigationBar>
+
+        </FrameLayout>
+    </LinearLayout>
+
+
+</layout>

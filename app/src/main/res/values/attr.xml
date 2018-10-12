@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BearFontTextView">
+        <attr name="underline" format="boolean" />
+        <attr name="midline" format="boolean" />
+        <attr name="bearFont">
+            <enum name="GillSans" value="1" />
+            <enum name="GillSansBold" value="2" />
+            <enum name="GillSansBoldItalic" value="3" />
+            <enum name="GillSansItalic" value="4" />
+            <enum name="GillSansMT" value="5" />
+            <enum name="GillSansMTBold" value="6" />
+            <enum name="GillSansMTBoldItalic" value="7" />
+            <enum name="GillSansMTItalic" value="8" />
+            <enum name="GillsansSemiBold" value="9" />
+            <enum name="DidotBold" value="10" />
+        </attr>
+    </declare-styleable>
+
+    <!-- 底部导航栏的资源数组 -->
+    <declare-styleable name="TlzBottomNavigationBar">
+        <attr name="resource_array_id" format="reference" />
+    </declare-styleable>
+
+    <!-- 可以取消左右滑动的ViewPager -->
+    <declare-styleable name="BearCancelScrollViewPager">
+        <attr name="cancel_scroll" format="boolean" />
+    </declare-styleable>
+
+</resources>

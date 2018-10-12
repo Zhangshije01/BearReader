@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <!--亚麻布-->
+    <color name="FAF0E6">#FAF0E6</color>
+    <!--白烟-->
+    <color name="F5F5F5">#F5F5F5</color>
+    <!--灰色-->
+    <color name="cc333333">#cc333333</color>
+    <!--黑色-->
+    <color name="FF000000">#000000</color>
+    <!--雪-->
+    <color name="FFFAFA">#FFFAFA</color>
+    <!--白色-->
+    <color name="white">#FFFFFF</color>
+    <!--亮灰色-->
+    <color name="FFDCDCDC">#DCDCDC</color>
+</resources>

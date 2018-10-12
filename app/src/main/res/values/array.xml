@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 底部导航栏的资源文件 -->
+    <string-array name="main_bottom_bar_icon_array">
+        <item>@drawable/select_tab_main_find</item>
+        <item>@drawable/select_tab_main_book</item>
+        <item>@drawable/select_tab_main_idea</item>
+        <item>@drawable/select_tab_main_me</item>
+    </string-array>
+</resources>
