@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import com.llx.bear.R;
 import com.llx.bear.databinding.ItemFindGralleryBinding;
-import com.llx.bear.ui.model.resultBean.FindBean;
+import com.llx.bear.model.resultBean.FindBean;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -15,7 +15,7 @@ import com.llx.bear.mvp.contract.FindFragmentContract;
 import com.llx.bear.mvp.presenter.FindFragmentPresenterImpl;
 import com.llx.bear.ui.adapter.FindGralleyAdapter;
 import com.llx.bear.ui.base.BaseFragment;
-import com.llx.bear.ui.model.resultBean.FindBean;
+import com.llx.bear.model.resultBean.FindBean;
 import com.llx.bear.ui.widget.BearGralleyView;
 
 import java.util.List;

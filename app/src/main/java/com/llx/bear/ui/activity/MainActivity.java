@@ -10,7 +10,7 @@ import android.view.KeyEvent;
 
 import com.llx.bear.BearReaderApplication;
 import com.llx.bear.R;
-import com.llx.bear.commen.ToastUtil;
+import com.llx.bear.commen.utils.ToastUtil;
 import com.llx.bear.commen.utils.StatusBarUtil;
 import com.llx.bear.databinding.ActivityMainBinding;
 import com.llx.bear.ui.adapter.MainActivityViewPagerAdapter;

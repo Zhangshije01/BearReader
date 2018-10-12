@@ -1,4 +1,4 @@
-package com.llx.bear.commen;
+package com.llx.bear.commen.utils;
 
 import android.text.TextUtils;
 import android.view.Gravity;

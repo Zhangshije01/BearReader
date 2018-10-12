@@ -2,7 +2,7 @@ package com.llx.bear.mvp.contract;
 
 import com.llx.bear.mvp.presenter.BasePresenter;
 import com.llx.bear.mvp.view.BaseView;
-import com.llx.bear.ui.model.resultBean.FindBean;
+import com.llx.bear.model.resultBean.FindBean;
 
 import java.util.List;
 

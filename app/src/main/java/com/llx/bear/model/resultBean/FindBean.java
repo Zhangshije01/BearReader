@@ -1,4 +1,4 @@
-package com.llx.bear.ui.model.resultBean;
+package com.llx.bear.model.resultBean;
 
 /**
  * @author: zhangshijie

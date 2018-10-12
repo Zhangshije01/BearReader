@@ -1,4 +1,4 @@
-package com.llx.bear.ui.model.requestModel;
+package com.llx.bear.model.requestModel;
 
 /**
  * @author: zhangshijie

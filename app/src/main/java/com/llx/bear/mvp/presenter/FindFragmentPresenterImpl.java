@@ -1,7 +1,7 @@
 package com.llx.bear.mvp.presenter;
 
 import com.llx.bear.mvp.contract.FindFragmentContract;
-import com.llx.bear.ui.model.resultBean.FindBean;
+import com.llx.bear.model.resultBean.FindBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,4 +31,36 @@ public class FindFragmentPresenterImpl extends BasePresenterImpl implements Find
 
         mView.showLoadData(mList);
     }
+
+    /**
+     * RxHttpUtils.createHttpRequest(RetrofitServiceGenerator.createService(BearDataApiService.class, new AESGsonResponseBodyConverter.JsonBridge() {
+    @Override
+    public void onJson(String json) {
+    LogUtil.d("zsj",json);
+    }
+    })
+     .httpGetOrderList(RequestBodyUtils.getRequestBody(requestModel)))
+     .subscribe(new CallBackSubscriber<OrdersResultModel>(mListener) {
+    @Override
+    public void _onStart() {
+
+    }
+
+    @Override
+    public void _onNext(OrdersResultModel ordersResultModel) {
+
+    }
+
+    @Override
+    public void _onError(String msg) {
+
+    }
+
+    @Override
+    public void _onCompleted() {
+
+    }
+    });
+
+     */
 }
