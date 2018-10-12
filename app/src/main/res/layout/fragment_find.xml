@@ -1,69 +1,67 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.llx.bear.ui.fragment.FindFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/F5F5F5">
+        android:background="@color/F5F5F5"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginTop="5dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:background="@drawable/drawable_shape_gray_rectangle_bg">
+            android:layout_marginTop="5dp"
+            android:background="@drawable/drawable_shape_gray_rectangle_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp">
 
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="20dp"
                 android:layout_marginLeft="10dp"
-                android:src="@mipmap/icon_search"/>
+                android:src="@mipmap/icon_search" />
 
             <com.llx.bear.ui.widget.BearFontTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:layout_weight="1"
                 android:text="搜索"
-                android:layout_marginLeft="5dp"
                 android:textSize="16sp"
-                app:bearFont="GillSans"/>
+                app:bearFont="GillSans" />
 
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="@color/F5F5F5"/>
+                android:background="@color/F5F5F5" />
 
             <com.llx.bear.ui.widget.BearFontTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="14dp"
                 android:text="书城"
-                android:layout_marginRight="10dp"
                 android:textSize="12sp"
-                app:bearFont="GillSans"/>
+                app:bearFont="GillSans" />
 
         </LinearLayout>
 
-        <LinearLayout
+
+        <com.llx.bear.ui.widget.BearGralleyView
+            android:id="@+id/find_fragment_grallery_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <com.llx.bear.ui.widget.BearGralleyView
-                android:id="@+id/find_fragment_grallery_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
 
-            </com.llx.bear.ui.widget.BearGralleyView>
-        </LinearLayout>
+        </com.llx.bear.ui.widget.BearGralleyView>
 
     </LinearLayout>
 
