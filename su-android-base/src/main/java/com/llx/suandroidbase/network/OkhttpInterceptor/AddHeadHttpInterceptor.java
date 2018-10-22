@@ -1,7 +1,5 @@
-package com.llx.bear.network.OkhttpInterceptor;
+package com.llx.suandroidbase.network.OkhttpInterceptor;
 
-import com.llx.bear.commen.Constant;
-import com.llx.bear.commen.utils.SPUtils;
 
 import java.io.IOException;
 
@@ -23,13 +21,13 @@ public class AddHeadHttpInterceptor implements Interceptor {
         /**
          *  token
          */
-        String auth_token = (String) SPUtils.get(Constant.CONFIG_KEY.AUTH_TOKEN_KEY, " ");
+//        String auth_token = (String) SPUtils.get(Constant.CONFIG_KEY.AUTH_TOKEN_KEY, " ");
 
         Request originalRequest = chain.request();
         Request.Builder requestBuilder = originalRequest.newBuilder()
                 .addHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8")
                 .addHeader("Connection", "keep-alive")
-                .addHeader("Authorization", auth_token == null ? "" : "Bearer " + auth_token)
+//                .addHeader("Authorization", auth_token == null ? "" : "Bearer " + auth_token)
                 .addHeader("Accept", "*/*")
                 .method(originalRequest.method(), originalRequest.body());
 

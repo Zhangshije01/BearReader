@@ -1,4 +1,4 @@
-package com.llx.bear.commen.utils;
+package com.llx.suandroidbase.commen;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -7,7 +7,7 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.telephony.TelephonyManager;
 
-import com.llx.bear.BearReaderApplication;
+import com.llx.suandroidbase.SuApplication;
 
 /**
  * Create by fanlei 2017/9/8
@@ -38,7 +38,7 @@ public class NetWorkUtils {
      * @return
      */
     public static boolean isNetworkAvailable(){
-        ConnectivityManager mConnectivityManager = (ConnectivityManager) BearReaderApplication.getInstance()
+        ConnectivityManager mConnectivityManager = (ConnectivityManager) SuApplication.getAppContext()
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

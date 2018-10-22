@@ -1,4 +1,4 @@
-package com.llx.bear.network.converter;
+package com.llx.suandroidbase.network.converter;
 
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;

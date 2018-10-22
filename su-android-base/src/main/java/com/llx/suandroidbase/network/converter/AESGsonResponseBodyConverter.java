@@ -1,9 +1,9 @@
-package com.llx.bear.network.converter;
+package com.llx.suandroidbase.network.converter;
 
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
-import com.llx.bear.network.utils.Assistant;
 import com.llx.suandroidbase.commen.LogUtil;
+import com.llx.suandroidbase.network.utils.Assistant;
 
 import java.io.IOException;
 

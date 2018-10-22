@@ -1,4 +1,4 @@
-package com.llx.bear.network.utils;
+package com.llx.suandroidbase.network.utils;
 
 import com.google.gson.Gson;
 import com.llx.suandroidbase.commen.LogUtil;

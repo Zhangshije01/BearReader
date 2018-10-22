@@ -1,8 +1,8 @@
-package com.llx.bear.network.OkhttpInterceptor;
+package com.llx.suandroidbase.network.OkhttpInterceptor;
 
 
-import com.llx.bear.BearReaderApplication;
-import com.llx.bear.commen.utils.NetWorkUtils;
+import com.llx.suandroidbase.SuApplication;
+import com.llx.suandroidbase.commen.NetWorkUtils;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -30,13 +30,13 @@ public class CatchHttpInterceptor implements Interceptor {
         CacheControl cacheControl = cacheBuilder.build();
 
         Request request = chain.request();
-        if (!NetWorkUtils.isNetworkConnected(BearReaderApplication.getInstance())) {
+        if (!NetWorkUtils.isNetworkConnected(SuApplication.getAppContext())) {
             request = request.newBuilder()
                     .cacheControl(cacheControl)
                     .build();
         }
         Response originalResponse = chain.proceed(request);
-        if (NetWorkUtils.isNetworkConnected(BearReaderApplication.getInstance())) {
+        if (NetWorkUtils.isNetworkConnected(SuApplication.getAppContext())) {
             // read from cache（半小时）
             int maxAge = 60 * 30;
             return originalResponse.newBuilder()

@@ -30,5 +30,16 @@ dependencies {
     compile 'com.android.support:appcompat-v7:27.+'
     //log打印
     compile 'com.orhanobut:logger:1.15'
+    //网络相关
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'io.reactivex:rxjava:1.1.0'
+    compile 'com.squareup.okhttp3:okhttp:3.10.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'io.sentry:sentry-android:1.7.2'
+
     testCompile 'junit:junit:4.12'
 }

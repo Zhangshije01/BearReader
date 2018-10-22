@@ -1,4 +1,4 @@
-package com.llx.bear.network.utils;
+package com.llx.suandroidbase.network.utils;
 
 import android.util.Base64;
 

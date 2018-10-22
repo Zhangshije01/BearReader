@@ -26,7 +26,6 @@ public class SPUtils {
      * @param value
      */
     public static void put(String key, Object value) {
-        //LogUtil.d("pathtag");
         SharedPreferences sp = BearReaderApplication.getInstance().getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = sp.edit();
         if (value instanceof String) {
@@ -41,7 +40,6 @@ public class SPUtils {
             edit.putLong(key, (Long) value);
         }
         edit.commit();
-       // SharedPreferencesCompat.EditorCompat.getInstance().apply(edit);
     }
 
     /**

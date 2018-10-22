@@ -1,9 +1,8 @@
-package com.llx.bear.network.utils;
+package com.llx.suandroidbase.network.utils;
 
 import android.text.TextUtils;
 
-import com.llx.bear.commen.Constant;
-
+import com.llx.suandroidbase.Constant;
 
 public class Assistant {
 

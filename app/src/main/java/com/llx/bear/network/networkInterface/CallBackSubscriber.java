@@ -1,10 +1,7 @@
 package com.llx.bear.network.networkInterface;
 
 
-import com.llx.bear.BearReaderApplication;
-import com.llx.bear.R;
 import com.llx.bear.model.resultModel.BaseResultModel;
-import com.llx.bear.network.OnHttpResultListener;
 
 import io.sentry.Sentry;
 import io.sentry.event.Event;
@@ -21,8 +18,13 @@ import rx.Subscriber;
 
 public abstract class CallBackSubscriber<T> extends Subscriber<T> {
 
-    private OnHttpResultListener<T> mListener;// 回调
-    //创建订阅者实例的代码路径
+    /**
+     * 回调
+     */
+    private OnHttpResultListener<T> mListener;
+    /**
+     * 创建订阅者实例的代码路径
+     */
     private String pathInfo = "";
 
     public CallBackSubscriber(OnHttpResultListener<T> mListener) {
@@ -36,8 +38,6 @@ public abstract class CallBackSubscriber<T> extends Subscriber<T> {
         for (int i = 0; i < length; i++) {
             StackTraceElement s = stackTrace[i];
             pathInfo += ("at：" + s.getClassName() + "." + s.getMethodName() + " (" + s.getFileName() + ":" + s.getLineNumber() + ")\n");
-            /*info += ("类名：" + s.getClassName() + "  ,  java文件名：" + s.getFileName() + ",  当前方法名字：" + s.getMethodName() + ""
-                    + " , 当前代码是第几行：" + s.getLineNumber() + ", ");*/
         }
     }
 
@@ -69,13 +69,10 @@ public abstract class CallBackSubscriber<T> extends Subscriber<T> {
         try {
             Sentry.capture(eventBuilder);
         } catch (Exception e1) {
-            //logger.error("Error sending uncaught exception to Sentry.", e);
         }
-        _onError(BearReaderApplication.getInstance().getResources().getString(R.string.sorry_network_is_not_good));
+        _onError("");
         if (mListener != null) {
-            //String carshInfo = LogUtil.getCrashInfo(e);
-            //mListener.onRequestError(carshInfo);
-            mListener.onRequestError(BearReaderApplication.getInstance().getResources().getString(R.string.sorry_network_is_not_good));
+            mListener.onRequestError("");
         }
     }
 
@@ -84,8 +81,7 @@ public abstract class CallBackSubscriber<T> extends Subscriber<T> {
         if (t != null) {
             if (t instanceof BaseResultModel) {
                 BaseResultModel resultModel = (BaseResultModel) t;
-                // -501 三方未绑定邮箱、-502用户输入邮箱为网站正常注册邮箱，-504 facebook,-505 paypal登录 -506 google 登录邮箱校验
-                if (resultModel.isSuccess() || resultModel.getCode() == -501 || resultModel.getCode() == -502 || resultModel.getCode() == -504 || resultModel.getCode() == -505 || resultModel.getCode() == -506) {
+                if (resultModel.isSuccess()) {
                     _onNext(t);
                     if (mListener != null) {
                         mListener.onRequestSuccess(t);
@@ -98,7 +94,7 @@ public abstract class CallBackSubscriber<T> extends Subscriber<T> {
             }
         } else {
             if (mListener != null) {
-                mListener.onRequestError(BearReaderApplication.getInstance().getResources().getString(R.string.sorry_network_is_not_good));
+                mListener.onRequestError("");
             }
         }
     }

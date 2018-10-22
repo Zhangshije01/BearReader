@@ -1,4 +1,4 @@
-package com.llx.bear.network;
+package com.llx.suandroidbase.network;
 
 import android.os.Build;
 
@@ -37,9 +37,11 @@ public class SSL extends SSLSocketFactory {
                 // - enable all supported protocols (enables TLSv1.1 and TLSv1.2 on Android <5.0)
                 // - remove all SSL versions (especially SSLv3) because they're insecure now
                 List<String> protocols = new LinkedList<>();
-                for (String protocol : socket.getSupportedProtocols())
-                    if (!protocol.toUpperCase().contains("SSL"))
+                for (String protocol : socket.getSupportedProtocols()) {
+                    if (!protocol.toUpperCase().contains("SSL")) {
                         protocols.add(protocol);
+                    }
+                }
                 SSL.protocols = protocols.toArray(new String[protocols.size()]);
                 /* set up reasonable cipher suites */
                 if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
@@ -116,40 +118,45 @@ public class SSL extends SSLSocketFactory {
     @Override
     public Socket createSocket(Socket s, String host, int port, boolean autoClose) throws IOException {
         Socket ssl = defaultFactory.createSocket(s, host, port, autoClose);
-        if (ssl instanceof SSLSocket)
+        if (ssl instanceof SSLSocket) {
             upgradeTLS((SSLSocket) ssl);
+        }
         return ssl;
     }
 
     @Override
     public Socket createSocket(String host, int port) throws IOException, UnknownHostException {
         Socket ssl = defaultFactory.createSocket(host, port);
-        if (ssl instanceof SSLSocket)
+        if (ssl instanceof SSLSocket) {
             upgradeTLS((SSLSocket) ssl);
+        }
         return ssl;
     }
 
     @Override
     public Socket createSocket(String host, int port, InetAddress localHost, int localPort) throws IOException, UnknownHostException {
         Socket ssl = defaultFactory.createSocket(host, port, localHost, localPort);
-        if (ssl instanceof SSLSocket)
+        if (ssl instanceof SSLSocket) {
             upgradeTLS((SSLSocket) ssl);
+        }
         return ssl;
     }
 
     @Override
     public Socket createSocket(InetAddress host, int port) throws IOException {
         Socket ssl = defaultFactory.createSocket(host, port);
-        if (ssl instanceof SSLSocket)
+        if (ssl instanceof SSLSocket) {
             upgradeTLS((SSLSocket) ssl);
+        }
         return ssl;
     }
 
     @Override
     public Socket createSocket(InetAddress address, int port, InetAddress localAddress, int localPort) throws IOException {
         Socket ssl = defaultFactory.createSocket(address, port, localAddress, localPort);
-        if (ssl instanceof SSLSocket)
+        if (ssl instanceof SSLSocket) {
             upgradeTLS((SSLSocket) ssl);
+        }
         return ssl;
     }
 }

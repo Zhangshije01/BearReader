@@ -1,4 +1,4 @@
-package com.llx.bear.network;
+package com.llx.suandroidbase.network;
 
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
