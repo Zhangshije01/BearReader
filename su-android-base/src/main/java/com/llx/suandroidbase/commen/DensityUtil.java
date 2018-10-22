@@ -1,4 +1,4 @@
-package com.llx.bear.commen.utils;
+package com.llx.suandroidbase.commen;
 
 import android.content.Context;
 import android.util.DisplayMetrics;
@@ -10,7 +10,7 @@ import android.view.WindowManager;
  * ----------数值转化类-----------
  */
 
-public class DensityUtils {
+public class DensityUtil {
 
     /**
      * dp转px

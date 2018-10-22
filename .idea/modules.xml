@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BearReader.iml" filepath="$PROJECT_DIR$/BearReader.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/su-android-base/su-android-base.iml" filepath="$PROJECT_DIR$/su-android-base/su-android-base.iml" />
     </modules>
   </component>
 </project>

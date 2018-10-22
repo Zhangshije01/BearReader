@@ -1,7 +1,7 @@
 package com.llx.bear.network.utils;
 
 import com.google.gson.Gson;
-import com.llx.bear.commen.utils.LogUtil;
+import com.llx.suandroidbase.commen.LogUtil;
 
 import java.io.IOException;
 

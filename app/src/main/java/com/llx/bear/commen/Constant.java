@@ -24,20 +24,11 @@ public class Constant {
         public static HashMap<String, String> TOKEN_PAMAS_MAP = new HashMap<String, String>();
 
         static {
-            /*TOKEN_PAMAS_MAP.put("client_id", "276055911742");
-            TOKEN_PAMAS_MAP.put("client_secret", "326A62D3749A48878748E02F9F8DC637");
-            TOKEN_PAMAS_MAP.put("grant_type", "client_credentials");
-            TOKEN_PAMAS_MAP.put("response_type", "token");*/
-
             TOKEN_PAMAS_MAP.put("client_id", "216941805343761");
             TOKEN_PAMAS_MAP.put("client_secret", "bd4078d018d8fbf11dd37b68251720eb");
             TOKEN_PAMAS_MAP.put("grant_type", "client_credentials");
             TOKEN_PAMAS_MAP.put("response_type", "token");
 
-            /*dict.Add("client_id", "66666666");
-            dict.Add("client_secret", "88888888");
-            dict.Add("grant_type", "client_credentials");
-            dict.Add("response_type", "token");*/
         }
     }
 }

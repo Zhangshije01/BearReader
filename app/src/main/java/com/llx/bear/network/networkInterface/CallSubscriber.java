@@ -3,9 +3,9 @@ package com.llx.bear.network.networkInterface;
 
 import com.llx.bear.BearReaderApplication;
 import com.llx.bear.R;
-import com.llx.bear.commen.utils.LogUtil;
 import com.llx.bear.model.resultModel.BaseResultModel;
 import com.llx.bear.network.OnHttpResultListener;
+import com.llx.suandroidbase.commen.LogUtil;
 
 import io.sentry.Sentry;
 import io.sentry.event.Event;

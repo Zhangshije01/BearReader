@@ -1,4 +1,4 @@
-package com.llx.bear.commen.utils;
+package com.llx.suandroidbase.commen;
 
 import android.annotation.TargetApi;
 import android.app.Activity;

@@ -15,7 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.llx.bear.commen.utils.DensityUtils;
+import com.llx.suandroidbase.commen.DensityUtil;
+
 
 /**
  * @author zhangshijie
@@ -70,9 +71,9 @@ public class BearGralleyView extends LinearLayout implements ViewPager.OnPageCha
         viewPager.setClipChildren(false);
         viewPager.setOffscreenPageLimit(2);
         viewPager.setOverScrollMode(OVER_SCROLL_NEVER);
-        viewPager.setPageMargin(DensityUtils.dp2px(getContext(), 15));
+        viewPager.setPageMargin(DensityUtil.dp2px(getContext(), 15));
         LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0,1.0f);
-        params.setMargins(DensityUtils.dp2px(getContext(), 45), 0, DensityUtils.dp2px(getContext(), 45), 0);
+        params.setMargins(DensityUtil.dp2px(getContext(), 45), 0, DensityUtil.dp2px(getContext(), 45), 0);
         addView(viewPager,params);
 
     }

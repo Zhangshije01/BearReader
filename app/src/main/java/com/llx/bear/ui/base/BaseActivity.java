@@ -6,7 +6,6 @@ import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 
-import com.llx.bear.commen.utils.StatusBarUtil;
 
 /**
  * @author: zhangshijie

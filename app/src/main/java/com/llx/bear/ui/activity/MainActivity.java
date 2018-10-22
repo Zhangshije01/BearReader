@@ -11,7 +11,6 @@ import android.view.KeyEvent;
 import com.llx.bear.BearReaderApplication;
 import com.llx.bear.R;
 import com.llx.bear.commen.utils.ToastUtil;
-import com.llx.bear.commen.utils.StatusBarUtil;
 import com.llx.bear.databinding.ActivityMainBinding;
 import com.llx.bear.ui.adapter.MainActivityViewPagerAdapter;
 import com.llx.bear.ui.base.BaseActivity;
@@ -19,6 +18,7 @@ import com.llx.bear.ui.fragment.BookFragment;
 import com.llx.bear.ui.fragment.FindFragment;
 import com.llx.bear.ui.fragment.IdeaFragment;
 import com.llx.bear.ui.fragment.MeFragment;
+import com.llx.suandroidbase.commen.StatusBarUtil;
 
 import java.util.ArrayList;
 import java.util.List;

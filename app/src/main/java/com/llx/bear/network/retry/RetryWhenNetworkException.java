@@ -1,11 +1,11 @@
 package com.llx.bear.network.retry;
 
 import com.llx.bear.commen.Constant;
-import com.llx.bear.commen.utils.LogUtil;
 import com.llx.bear.commen.utils.SPUtils;
 import com.llx.bear.model.resultModel.AuthTokenResultModel;
 import com.llx.bear.network.RetrofitServiceGenerator;
 import com.llx.bear.network.api.BearTokenApiService;
+import com.llx.suandroidbase.commen.LogUtil;
 
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
