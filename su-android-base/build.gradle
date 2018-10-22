@@ -40,6 +40,8 @@ dependencies {
     compile 'com.squareup.okhttp3:logging-interceptor:3.10.0'
     compile 'com.google.code.gson:gson:2.8.0'
     compile 'io.sentry:sentry-android:1.7.2'
+    //加载图片
+    compile 'com.github.bumptech.glide:glide:3.8.0'
 
     testCompile 'junit:junit:4.12'
 }

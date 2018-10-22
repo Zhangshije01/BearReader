@@ -3,7 +3,6 @@ package com.llx.suandroidbase.network.converter;
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 import com.llx.suandroidbase.commen.LogUtil;
-import com.llx.suandroidbase.network.utils.Assistant;
 
 import java.io.IOException;
 
@@ -39,14 +38,14 @@ public class AESGsonResponseBodyConverter<T> implements Converter<ResponseBody, 
 
         String encryption_content = new String(bytes, "UTF-8");// 未解密的串
         LogUtil.d("OkHttp", "解密前 : " + encryption_content);
-
-        String decrypt_text = Assistant.UnBoxing(encryption_content);// 解密后的串
-        LogUtil.d("OkHttp", "解密后 : " + decrypt_text);
-        if(jsonBridge!=null){
-            jsonBridge.onJson(decrypt_text);
-        }
+//
+//        String decrypt_text = Assistant.UnBoxing(encryption_content);// 解密后的串
+//        LogUtil.d("OkHttp", "解密后 : " + decrypt_text);
+//        if(jsonBridge!=null){
+//            jsonBridge.onJson(decrypt_text);
+//        }
         //解密字符串
-        return adapter.fromJson(decrypt_text);
+        return adapter.fromJson(encryption_content);
     }
 
     public static abstract class JsonBridge{

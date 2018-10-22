@@ -1,10 +1,9 @@
 package com.llx.bear.network.api;
 
-import com.llx.bear.model.resultModel.BaseResultModel;
+import com.llx.bear.model.resultModel.BookDetailResultModel;
 
-import okhttp3.RequestBody;
-import retrofit2.http.Body;
-import retrofit2.http.POST;
+import retrofit2.http.GET;
+import retrofit2.http.Path;
 import rx.Observable;
 
 /**
@@ -20,7 +19,7 @@ public interface BearDataApiService {
     /**
      * 从服务器获取优惠券数据
      */
-    @POST("api/UserCenter/GetMyInviteInfo")
-    Observable<BaseResultModel> GetMyInviteInfo(@Body RequestBody requestBody);
+    @GET("/book/{bookId}")
+    Observable<BookDetailResultModel> getBookDetail(@Path("bookId") String bookId);
 
 }

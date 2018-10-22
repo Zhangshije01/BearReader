@@ -17,7 +17,7 @@ import rx.schedulers.Schedulers;
 public class RxHttpUtils {
 
     private static final String HOST_API_ONLINE = "https://keeper.lifely.us/";
-    private static final String HOST_API_SANDBOX = "http://54.201.208.127:8893/";
+    private static final String HOST_API_SANDBOX = "http://api.zhuishushenqi.com";
 
     public static String getBaseApiUri() {
         if (BuildConfig.DEBUG) {

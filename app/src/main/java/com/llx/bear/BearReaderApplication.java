@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import com.llx.bear.ui.base.BaseApplication;
+import com.llx.suandroidbase.SuApplication;
 
 import java.util.LinkedList;
 
@@ -22,6 +23,8 @@ public class BearReaderApplication extends BaseApplication{
     public void onCreate() {
         super.onCreate();
         application = this;
+        SuApplication.init(this, BuildConfig.DEBUG);
+
     }
 
     public static BearReaderApplication getInstance(){

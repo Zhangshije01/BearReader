@@ -30,28 +30,5 @@ public class FindFragmentPresenterImpl extends BasePresenterImpl implements Find
         }
 
         mView.showLoadData(mList);
-
-//        RxHttpUtils.createHttpRequest(RxHttpUtils.getApiService().GetMyInviteInfo())
-//                .subscribe(new CallSubscriber<BaseResultModel>(new OnHttpResultListener<BaseResultModel>() {
-//                    @Override
-//                    public void onRequestStart() {
-//
-//                    }
-//
-//                    @Override
-//                    public void onRequestSuccess(BaseResultModel baseResultModel) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onRequestError(String error) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onRequestCompleted() {
-//
-//                    }
-//                }));
     }
 }

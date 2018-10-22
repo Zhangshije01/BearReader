@@ -1,13 +1,27 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context="com.llx.bear.ui.fragment.BookFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="book" />
+        android:orientation="vertical">
 
-</FrameLayout>
+        <com.llx.bear.ui.widget.BearFontTextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="书架"
+            android:textSize="16sp"
+            android:background="F5F5F5"
+            app:bearFont="GillSansBold" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_book_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+</layout>
