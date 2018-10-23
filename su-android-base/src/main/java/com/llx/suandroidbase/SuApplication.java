@@ -25,4 +25,8 @@ public class SuApplication {
     public static Context getAppContext() {
         return sAppContext;
     }
+
+    public static boolean issIsDebug() {
+        return sIsDebug;
+    }
 }

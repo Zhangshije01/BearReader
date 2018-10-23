@@ -1,6 +1,6 @@
 package com.llx.suandroidbase.network;
 
-import com.llx.suandroidbase.BuildConfig;
+import com.llx.suandroidbase.SuApplication;
 import com.llx.suandroidbase.network.OkhttpInterceptor.AddHeadHttpInterceptor;
 import com.llx.suandroidbase.network.converter.AESGsonConverterFactory;
 
@@ -63,7 +63,7 @@ public class RetrofitServiceGenerator {
         httpClient.writeTimeout(15, TimeUnit.SECONDS);
         /**添加请求头*/
         httpClient.addInterceptor(new AddHeadHttpInterceptor());
-        if (BuildConfig.DEBUG && null != httpClient) {
+        if (SuApplication.issIsDebug()) {
             /**加入过滤器，仅仅是为了打印请求头和返回的数据*/
             httpClient.addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY));
         }

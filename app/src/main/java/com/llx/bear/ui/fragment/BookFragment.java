@@ -45,7 +45,13 @@ public class BookFragment extends BaseFragment implements BookFragmentContract.B
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mPresenter = new BookFragmentPresenterImpl(this);
+    }
+
+    @Override
+    protected void lazyLoadData() {
+        super.lazyLoadData();
         mPresenter.loadBookRackData();
+
     }
 
     @Override
@@ -75,4 +81,5 @@ public class BookFragment extends BaseFragment implements BookFragmentContract.B
         mBinding.recyclerBookFragment.setItemAnimator(new DefaultItemAnimator());
         mBinding.recyclerBookFragment.setAdapter(adapter);
     }
+
 }

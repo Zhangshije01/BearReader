@@ -11,9 +11,9 @@
     <style name="MeatrailDesignStyle" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowAnimationStyle">@style/activityAnimation</item>
-        <item name="colorPrimary">@color/F5F5F5</item>
-        <item name="colorPrimaryDark">@color/F5F5F5</item>
-        <item name="colorAccent">@color/F5F5F5</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/white</item>
     </style>
     <!-- animation 样式 -->
     <style name="activityAnimation" parent="@android:style/Animation">

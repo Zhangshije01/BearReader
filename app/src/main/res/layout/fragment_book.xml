@@ -14,7 +14,7 @@
             android:gravity="center"
             android:text="书架"
             android:textSize="16sp"
-            android:background="F5F5F5"
+            android:background="@color/white"
             app:bearFont="GillSansBold" />
 
         <android.support.v7.widget.RecyclerView
