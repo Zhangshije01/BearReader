@@ -4,6 +4,7 @@ import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.List;
@@ -17,6 +18,7 @@ public class MyMvvmAdapter<T> extends BaseMvvmAdapter<T>{
 
     int mLayoutId;
     int mVarId;
+    private OnItemClickListener<T> mItemClickListenr;
 
     public MyMvvmAdapter(Context ctx, List<T> list, int mLayoutId, int mVarId) {
         super(ctx, list);
@@ -36,9 +38,27 @@ public class MyMvvmAdapter<T> extends BaseMvvmAdapter<T>{
     }
 
     @Override
-    public void onInjectView(RecyclerHolder holder, T data, int position) {
+    public void onInjectView(RecyclerHolder holder, final T data, final int position) {
         holder.getDataBinding().setVariable(mVarId,data);
         holder.getDataBinding().executePendingBindings();
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mItemClickListenr!=null){
+                    mItemClickListenr.onItemClick(data,position);
+                }
+            }
+        });
+    }
+
+    public void setItemClickListenr(OnItemClickListener<T> mItemClickListenr) {
+        this.mItemClickListenr = mItemClickListenr;
+    }
+
+    public interface OnItemClickListener<T>{
+        void onItemClick(T data,int position);
+        void onItemLongClick();
     }
 
 }

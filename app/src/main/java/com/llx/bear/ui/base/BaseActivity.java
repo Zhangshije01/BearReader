@@ -12,17 +12,16 @@ import android.support.v4.app.FragmentActivity;
  * Time: 2018/10/9 11:42
  */
 
-public class BaseActivity extends FragmentActivity{
+public abstract class BaseActivity extends FragmentActivity{
     public Activity mActivity;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
         mActivity = this;
+        configView();
+    }
 
-        //屏幕状态栏
-        setScreenView();
-    }
-    public void setScreenView(){
-    }
+    public abstract void configView();
+
 }

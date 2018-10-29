@@ -50,6 +50,11 @@ public class FindFragment extends BaseFragment implements FindFragmentContract.F
     }
 
     @Override
+    public void configView() {
+
+    }
+
+    @Override
     public void attachPresenter(FindFragmentContract.Presenter presenter) {
         this.mPresenter = presenter;
     }

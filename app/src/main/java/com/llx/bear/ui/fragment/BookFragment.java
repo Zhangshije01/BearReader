@@ -17,19 +17,22 @@ import com.llx.bear.databinding.FragmentBookBinding;
 import com.llx.bear.model.resultModel.BookDetailResultModel;
 import com.llx.bear.mvp.contract.BookFragmentContract;
 import com.llx.bear.mvp.presenter.BookFragmentPresenterImpl;
+import com.llx.bear.ui.activity.BookReaderActivity;
 import com.llx.bear.ui.adapter.base.MyMvvmAdapter;
 import com.llx.bear.ui.base.BaseFragment;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @author zhangshijie
  *         书架
  */
-public class BookFragment extends BaseFragment implements BookFragmentContract.BookFragmentView {
+public class BookFragment extends BaseFragment implements BookFragmentContract.BookFragmentView,MyMvvmAdapter.OnItemClickListener{
     private FragmentBookBinding mBinding;
     private BookFragmentContract.Presenter mPresenter;
     private MyMvvmAdapter adapter;
+    private List<BookDetailResultModel> mBookLists = new ArrayList<>();
     public BookFragment() {
     }
 
@@ -55,6 +58,16 @@ public class BookFragment extends BaseFragment implements BookFragmentContract.B
     }
 
     @Override
+    public void configView() {
+        adapter = new MyMvvmAdapter(mActivity,mBookLists,R.layout.item_book_rack_layout, BR.BookDetailResultModel);
+        mBinding.recyclerBookFragment.setLayoutManager(new GridLayoutManager(mActivity,3));
+        mBinding.recyclerBookFragment.setItemAnimator(new DefaultItemAnimator());
+        mBinding.recyclerBookFragment.setAdapter(adapter);
+
+        adapter.setItemClickListenr(this);
+    }
+
+    @Override
     public void attachPresenter(BookFragmentContract.Presenter presenter) {
         this.mPresenter = presenter;
     }
@@ -75,11 +88,19 @@ public class BookFragment extends BaseFragment implements BookFragmentContract.B
     }
 
     @Override
-    public void showBookRackData(List<BookDetailResultModel> mBookLists) {
-        adapter = new MyMvvmAdapter(mActivity,mBookLists,R.layout.item_book_rack_layout, BR.BookDetailResultModel);
-        mBinding.recyclerBookFragment.setLayoutManager(new GridLayoutManager(mActivity,3));
-        mBinding.recyclerBookFragment.setItemAnimator(new DefaultItemAnimator());
-        mBinding.recyclerBookFragment.setAdapter(adapter);
+    public void showBookRackData(List<BookDetailResultModel> mLists) {
+        mBookLists.addAll(mLists);
+        adapter.notifyDataSetChanged();
     }
 
+    @Override
+    public void onItemClick(Object data, int position) {
+        BookDetailResultModel bookDetailResultModel = (BookDetailResultModel) data;
+        BookReaderActivity.startActivity(mActivity,bookDetailResultModel);
+    }
+
+    @Override
+    public void onItemLongClick() {
+
+    }
 }

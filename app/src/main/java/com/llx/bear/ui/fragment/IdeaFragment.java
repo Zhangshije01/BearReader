@@ -28,4 +28,8 @@ public class IdeaFragment extends BaseFragment {
         return inflater.inflate(R.layout.fragment_idea, container, false);
     }
 
+    @Override
+    public void configView() {
+
+    }
 }

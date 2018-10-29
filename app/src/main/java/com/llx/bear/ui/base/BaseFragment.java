@@ -29,6 +29,7 @@ public abstract class BaseFragment extends Fragment{
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         isPrepared = true;
+        configView();
     }
 
     @Override
@@ -58,4 +59,6 @@ public abstract class BaseFragment extends Fragment{
      * 懒加载的方法
      */
     protected void lazyLoadData() {}
+
+    public abstract void configView();
 }

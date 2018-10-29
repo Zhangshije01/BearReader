@@ -49,7 +49,10 @@ public class MainActivity extends BaseActivity {
         initView();
 
     }
+    @Override
+    public void configView() {
 
+    }
     public void initData() {
         findFragment = new FindFragment();
         bookFragment = new BookFragment();
@@ -113,4 +116,6 @@ public class MainActivity extends BaseActivity {
         }
         return true;
     }
+
+
 }
