@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.llx.suandroidbase.commen.LogUtil;
+import com.llx.suandroidbase.commen.LogUtils;
 
 import java.util.List;
 
@@ -133,7 +133,7 @@ public abstract class BaseMvvmAdapter<T> extends RecyclerView.Adapter {
         }
 
 
-        //LogUtil.d("lch---", "position===" + position + "\ttotalCount===" + totalCount);
+        //LogUtils.d("lch---", "position===" + position + "\ttotalCount===" + totalCount);
         if (getItemViewType(position) == ITEM_TYPE_LOAD_MORE) {
             if (position + 1 >= totalCount || totalCount == 0) {
                 holder.itemView.setVisibility(View.GONE);
@@ -229,7 +229,7 @@ public abstract class BaseMvvmAdapter<T> extends RecyclerView.Adapter {
         }
 
         if (position >= mList.size()) {
-            LogUtil.d("mytag", "stop");
+            LogUtils.d("mytag", "stop");
         }
 
         return getContentViewType(position, mList.get(position));

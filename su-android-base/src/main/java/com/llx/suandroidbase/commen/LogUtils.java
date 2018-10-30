@@ -8,10 +8,10 @@ import java.io.Writer;
 
 
 /**
- * LogUtil
+ * LogUtils
  * Created by maodeqiang on 2015/7/13.
  */
-public class LogUtil {
+public class LogUtils {
 
     /**
      * 日志输出级别NONE
@@ -37,7 +37,7 @@ public class LogUtil {
      * 日志输出级别E
      */
     public static final int LEVEL_ERROR = 5;
-    private static final String TAG = "LogUtil";
+    private static final String TAG = "LogUtils";
 
     /**
      * 日志输出时的TAG
@@ -122,7 +122,7 @@ public class LogUtil {
     }
 
     public static void printException(String tag, Throwable t) {
-        LogUtil.d(tag, getCrashInfo(t));
+        LogUtils.d(tag, getCrashInfo(t));
     }
 
     public static void json(String tag, String json) {

@@ -15,7 +15,7 @@ import com.llx.bear.ui.widget.BearFontTextView;
  * Time: 2018/10/9 15:19
  */
 
-public class ToastUtil {
+public class ToastUtils {
 
     public static void showSuccToast(String msg){
         View view = LayoutInflater.from(BearReaderApplication.getInstance()).inflate(R.layout.toast_show_success_layout,null);

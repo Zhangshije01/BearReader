@@ -17,7 +17,7 @@ import java.lang.reflect.Method;
  * 屏幕状态栏相关工具类
  */
 
-public class StatusBarUtil {
+public class StatusBarUtils {
     /**
      * 修改状态栏为全透明
      * @param activity

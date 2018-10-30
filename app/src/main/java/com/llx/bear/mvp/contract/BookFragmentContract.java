@@ -11,14 +11,14 @@ import java.util.List;
  * Time: 2018/10/22 16:40
  */
 
-public class BookFragmentContract {
-    public interface Presenter extends BasePresenter{
+public interface BookFragmentContract {
+    interface Presenter extends BasePresenter{
         /**
          *  获取书架
          */
         void loadBookRackData();
     }
-    public interface BookFragmentView extends BaseView<Presenter>{
+    interface BookFragmentView extends BaseView<Presenter>{
         void showBookRackData(List<BookDetailResultModel> mBookLists);
     }
 }

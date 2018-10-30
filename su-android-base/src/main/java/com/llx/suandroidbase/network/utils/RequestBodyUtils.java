@@ -1,7 +1,7 @@
 package com.llx.suandroidbase.network.utils;
 
 import com.google.gson.Gson;
-import com.llx.suandroidbase.commen.LogUtil;
+import com.llx.suandroidbase.commen.LogUtils;
 
 import java.io.IOException;
 
@@ -23,7 +23,7 @@ public class RequestBodyUtils {
     public static RequestBody getRequestBody(Object obj) {
         String reqStr;
         reqStr = new Gson().toJson(obj);
-        LogUtil.d("Okhttp", " 请求参数 ：" + reqStr);// 打印数据
+        LogUtils.d("Okhttp", " 请求参数 ：" + reqStr);// 打印数据
         reqStr = Assistant.Boxing(reqStr);// 加密
         return RequestBody.create(okhttp3.MediaType.parse("application/text; charset=utf-8"), reqStr);
     }
@@ -31,7 +31,7 @@ public class RequestBodyUtils {
     public static RequestBody getWMSRequestBody(Object obj) {
         String reqStr;
         reqStr = new Gson().toJson(obj);
-        LogUtil.d("Okhttp", " 请求参数 ：" + reqStr);// 打印数据
+        LogUtils.d("Okhttp", " 请求参数 ：" + reqStr);// 打印数据
 //        reqStr = Assistant.Boxing(reqStr);// 加密
         return RequestBody.create(okhttp3.MediaType.parse("application/json"), reqStr);
     }

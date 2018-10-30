@@ -4,12 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.llx.bear.ui.activity.BookReaderActivity">
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/rl_book_reader_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:background="@color/FAF0E6">
+        <FrameLayout
+            android:id="@+id/fl_book_reader"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="false"
+            android:focusable="false"
+            android:layerType="hardware">
 
-    </LinearLayout>
-
+        </FrameLayout>
+    </RelativeLayout>
 
 </layout>

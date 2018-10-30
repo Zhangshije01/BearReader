@@ -1,6 +1,8 @@
 package com.llx.bear.network;
 
 import com.llx.bear.BuildConfig;
+import com.llx.bear.model.resultBean.BookMixAToc;
+import com.llx.bear.model.resultBean.ChapterRead;
 import com.llx.bear.model.resultModel.BookDetailResultModel;
 import com.llx.suandroidbase.network.RetrofitServiceGenerator;
 
@@ -56,6 +58,18 @@ public class BearReaderApi {
     public static Observable<BookDetailResultModel> getBookDetail(String bookId){
         return createHttpRequest(getApiService().getBookDetail(bookId));
     }
+
+    /**
+     *  获取章节内容
+     */
+    public static Observable<ChapterRead> getChapterRead(String url){
+        return createHttpRequest(getApiService().getChapterRead(url));
+    }
+
+    public static Observable<BookMixAToc> getBookMixAToc(String bookId,String views){
+        return createHttpRequest(getApiService().getBookMixAToc(bookId,views));
+    }
+
 
 
 }
