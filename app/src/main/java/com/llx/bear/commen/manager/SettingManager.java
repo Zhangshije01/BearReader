@@ -17,7 +17,7 @@ package com.llx.bear.commen.manager;
 
 import com.llx.bear.commen.Constant;
 import com.llx.bear.commen.utils.SharedPreferencesUtil;
-import com.llx.bear.commen.utils.ToastUtils;
+import com.llx.suandroidbase.commen.ToastUtils;
 import com.llx.bear.model.resultBean.BookMark;
 import com.llx.suandroidbase.commen.ScreenUtils;
 
@@ -80,7 +80,7 @@ public class SettingManager {
      */
     public void saveReadBrightness(int percent) {
         if(percent > 100){
-            ToastUtils.showSuccToast("saveReadBrightnessErr CheckRefs");
+            ToastUtils.showToast("saveReadBrightnessErr CheckRefs");
             percent = 100;
         }
         SharedPreferencesUtil.getInstance().putInt(getLightnessKey(), percent);

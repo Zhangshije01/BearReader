@@ -51,7 +51,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
- * @author zhangshijei
+ * @author zhangshijie
+ * 缓存设置
  */
 public class ACache {
     public static final int TIME_HOUR = 60 * 60;

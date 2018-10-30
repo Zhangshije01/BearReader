@@ -25,7 +25,7 @@ import android.widget.Scroller;
 
 import com.llx.bear.commen.manager.SettingManager;
 import com.llx.bear.commen.manager.ThemeManager;
-import com.llx.bear.commen.utils.ToastUtils;
+import com.llx.suandroidbase.commen.ToastUtils;
 import com.llx.bear.model.resultBean.BookMixAToc;
 import com.llx.suandroidbase.commen.LogUtils;
 import com.llx.suandroidbase.commen.ScreenUtils;
@@ -123,7 +123,7 @@ public abstract class BaseReadView extends View {
                     if (actiondownX < mScreenWidth / 2) {// 从左翻
                         BookStatus status = pagefactory.prePage();
                         if (status == BookStatus.NO_PRE_PAGE) {
-                            ToastUtils.showSuccToast("没有上一页啦");
+                            ToastUtils.showToast("没有上一页啦");
                             return false;
                         } else if (status == BookStatus.LOAD_SUCCESS) {
                             abortAnimation();
@@ -134,7 +134,7 @@ public abstract class BaseReadView extends View {
                     } else if (actiondownX >= mScreenWidth / 2) {// 从右翻
                         BookStatus status = pagefactory.nextPage();
                         if (status == BookStatus.NO_NEXT_PAGE) {
-                            ToastUtils.showSuccToast("没有下一页啦");
+                            ToastUtils.showToast("没有下一页啦");
                             return false;
                         } else if (status == BookStatus.LOAD_SUCCESS) {
                             abortAnimation();
@@ -267,7 +267,7 @@ public abstract class BaseReadView extends View {
     public void nextPage() {
         BookStatus status = pagefactory.nextPage();
         if (status == BookStatus.NO_NEXT_PAGE) {
-            ToastUtils.showSuccToast("没有下一页啦");
+            ToastUtils.showToast("没有下一页啦");
             return;
         } else if (status == BookStatus.LOAD_SUCCESS) {
             if (isPrepared) {
@@ -284,7 +284,7 @@ public abstract class BaseReadView extends View {
     public void prePage() {
         BookStatus status = pagefactory.prePage();
         if (status == BookStatus.NO_PRE_PAGE) {
-            ToastUtils.showSuccToast("没有上一页啦");
+            ToastUtils.showToast("没有上一页啦");
             return;
         } else if (status == BookStatus.LOAD_SUCCESS) {
             if (isPrepared) {

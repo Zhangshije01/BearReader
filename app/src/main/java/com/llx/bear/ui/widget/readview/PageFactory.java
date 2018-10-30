@@ -224,7 +224,7 @@ public class PageFactory {
                 canvas.drawColor(Color.WHITE);
             }
             // 绘制标题
-            canvas.drawText(chaptersList.get(currentChapter - 1).title, marginWidth, y, mTitlePaint);
+            canvas.drawText(chaptersList.get(currentChapter - 1).title+" 第"+currentPage+"页", marginWidth, y, mTitlePaint);
             y += mLineSpace + mNumFontSize;
             // 绘制阅读页面文字
             for (String line : mLines) {

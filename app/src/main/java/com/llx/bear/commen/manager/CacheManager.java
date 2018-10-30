@@ -25,7 +25,7 @@ import com.llx.bear.commen.utils.AppUtils;
 import com.llx.bear.commen.utils.FileUtils;
 import com.llx.bear.commen.utils.SharedPreferencesUtil;
 import com.llx.bear.commen.utils.StringUtils;
-import com.llx.bear.commen.utils.ToastUtils;
+import com.llx.suandroidbase.commen.ToastUtils;
 import com.llx.bear.model.resultBean.BookLists;
 import com.llx.bear.model.resultBean.BookMixAToc;
 import com.llx.bear.model.resultBean.ChapterRead;
@@ -95,14 +95,14 @@ public class CacheManager {
         for (BookLists.BookListsBean data : list) {
             if (data != null) {
                 if (TextUtils.equals(data._id, bean._id)) {
-                    ToastUtils.showSuccToast("已经收藏过啦");
+                    ToastUtils.showToast("已经收藏过啦");
                     return;
                 }
             }
         }
         list.add(bean);
         ACache.get(BearReaderApplication.getInstance()).put(getCollectionKey(), (Serializable) list);
-        ToastUtils.showSuccToast("收藏成功");
+        ToastUtils.showToast("收藏成功");
     }
 
     private String getCollectionKey() {
