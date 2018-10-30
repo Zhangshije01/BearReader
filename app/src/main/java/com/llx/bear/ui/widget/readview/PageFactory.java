@@ -46,6 +46,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Vector;
 
+/**
+ * @author zhangshijei
+ */
 public class PageFactory {
     private Context mContext;
     /**

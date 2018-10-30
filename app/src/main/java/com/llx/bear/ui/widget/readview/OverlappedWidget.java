@@ -29,7 +29,7 @@ import com.llx.bear.model.resultBean.BookMixAToc;
 import java.util.List;
 
 /**
- * @author yuyh.
+ * @author zhangshijei.
  * @date 2016/10/18.
  */
 public class OverlappedWidget extends BaseReadView {

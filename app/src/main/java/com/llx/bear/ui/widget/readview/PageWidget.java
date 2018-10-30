@@ -33,6 +33,9 @@ import com.llx.bear.model.resultBean.BookMixAToc;
 
 import java.util.List;
 
+/**
+ * @author zhangshijei
+ */
 public class PageWidget extends BaseReadView {
 
     private int mCornerX = 1; // 拖拽点对应的页脚

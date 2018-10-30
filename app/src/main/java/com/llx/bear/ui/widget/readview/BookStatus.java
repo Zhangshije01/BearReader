@@ -1,7 +1,7 @@
 package com.llx.bear.ui.widget.readview;
 
 /**
- * @author yuyh.
+ * @author zhangshijei.
  * @date 2016/11/15.
  */
 public enum BookStatus {

@@ -16,7 +16,7 @@
 package com.llx.bear.ui.widget.readview;
 
 /**
- * @author yuyh.
+ * @author zhangshijei.
  * @date 2016/9/21.
  */
 public interface OnReadStateChangeListener {

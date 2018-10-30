@@ -22,7 +22,7 @@ import com.llx.bear.model.resultBean.BookMixAToc;
 import java.util.List;
 
 /**
- * @author zths.
+ * @author zhangshijei.
  * @date 2017/08/03.
  */
 public class NoAimWidget extends OverlappedWidget {

@@ -16,7 +16,9 @@
 package com.llx.bear.commen.utils;
 
 /**
- * Created by lfh on 2016/9/10.
+ *
+ * @author zhangshijei
+ * @date 2016/9/10
  */
 public class StringUtils {
 

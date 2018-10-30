@@ -37,7 +37,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author yuyh.
+ * @author zhangshijei.
  * @date 2016/9/28.
  */
 public class CacheManager {

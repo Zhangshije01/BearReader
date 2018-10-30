@@ -44,7 +44,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 /**
- * @author yuyh.
+ * @author zhangshijei.
  * @date 16/4/9.
  */
 public class FileUtils {

@@ -33,7 +33,7 @@ import com.llx.suandroidbase.commen.ScreenUtils;
 import java.util.List;
 
 /**
- * @author yuyh.
+ * @author zhangshijei.
  * @date 2016/10/18.
  */
 public abstract class BaseReadView extends View {
