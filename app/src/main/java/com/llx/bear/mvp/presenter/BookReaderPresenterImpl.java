@@ -42,20 +42,22 @@ public class BookReaderPresenterImpl extends BasePresenterImpl implements BookRe
 
     @Override
     public void getBookMixAToc(String bookId) {
+        mView.showDialog();
         BearReaderApi.getBookMixAToc(bookId, "chapters").subscribe(new Subscriber<BookMixAToc>() {
             @Override
             public void onCompleted() {
-
+                mView.dismissDialog();
             }
 
             @Override
             public void onError(Throwable e) {
-
+                mView.loadError();
             }
 
             @Override
             public void onNext(BookMixAToc bookMixAToc) {
                 mView.showBookChapterList(bookMixAToc.mixToc.chapters);
+                mView.dismissDialog();
             }
         });
     }

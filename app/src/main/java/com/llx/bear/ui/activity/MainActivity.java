@@ -46,12 +46,8 @@ public class MainActivity extends BaseActivity {
         mBinding = DataBindingUtil.setContentView(this,R.layout.activity_main);
         initData();
         initView();
-
     }
-    @Override
-    public void configView() {
 
-    }
     public void initData() {
         findFragment = new FindFragment();
         bookFragment = new BookFragment();

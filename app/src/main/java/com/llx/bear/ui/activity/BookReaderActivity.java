@@ -59,11 +59,6 @@ public class BookReaderActivity extends BaseActivity implements BookReaderContra
         mPresenter.getBookMixAToc(bookId);
     }
 
-    @Override
-    public void configView() {
-
-    }
-
     public void initExtra() {
         bookDetailResultModel = (BookDetailResultModel) getIntent().getSerializableExtra(INTENT_BEAN);
         bookId = bookDetailResultModel._id;
@@ -167,12 +162,12 @@ public class BookReaderActivity extends BaseActivity implements BookReaderContra
 
     @Override
     public void showDialog() {
-
+        showLoadingDialog();
     }
 
     @Override
     public void dismissDialog() {
-
+        dissmissLoadingDialog();
     }
 
     @Override
