@@ -19,6 +19,10 @@ public interface BookFragmentContract {
         void loadBookRackData();
     }
     interface BookFragmentView extends BaseView<Presenter>{
+        /**
+         *  得到书架中所有书籍
+         * @param mBookLists 书籍集合
+         */
         void showBookRackData(List<BookDetailResultModel> mBookLists);
     }
 }

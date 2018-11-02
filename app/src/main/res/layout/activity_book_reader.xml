@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/FAF0E6">
+
         <FrameLayout
             android:id="@+id/fl_book_reader"
             android:layout_width="match_parent"
@@ -18,6 +19,79 @@
             android:layerType="hardware">
 
         </FrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/ll_reader_top"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/chapter_title_day"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_marginLeft="15dp"
+                android:src="@mipmap/icon_back_white" />
+
+            <ImageView
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_alignTop="@+id/iv_book_reader_switch"
+                android:layout_marginRight="15dp"
+                android:layout_toStartOf="@+id/iv_book_reader_switch"
+                android:src="@mipmap/icon_add_bookrack_white" />
+
+            <ImageView
+                android:id="@+id/iv_book_reader_switch"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:src="@mipmap/icon_switch_white" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_reader_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/chapter_title_day"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_book_reader_contents"
+                android:layout_width="0dp"
+                android:layout_height="27dp"
+                android:layout_weight="1"
+                android:src="@mipmap/icon_contents_white" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="27dp"
+                android:layout_weight="1"
+                android:src="@mipmap/icon_font_white" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="27dp"
+                android:layout_weight="1"
+                android:src="@mipmap/icon_light_white" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="27dp"
+                android:layout_weight="1"
+                android:src="@mipmap/icon_bookmark_white" />
+
+
+        </LinearLayout>
     </RelativeLayout>
 
 </layout>

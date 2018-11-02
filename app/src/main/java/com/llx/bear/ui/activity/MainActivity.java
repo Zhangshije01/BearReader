@@ -16,7 +16,6 @@ import com.llx.bear.ui.fragment.BookFragment;
 import com.llx.bear.ui.fragment.FindFragment;
 import com.llx.bear.ui.fragment.IdeaFragment;
 import com.llx.bear.ui.fragment.MeFragment;
-import com.llx.suandroidbase.commen.StatusBarUtils;
 import com.llx.suandroidbase.commen.ToastUtils;
 
 import java.util.ArrayList;
@@ -39,13 +38,13 @@ public class MainActivity extends BaseActivity {
 
     private List<Fragment> mFragmentList;
     private MainActivityViewPagerAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        StatusBarUtils.StatusBarLightMode(this);
-        mBinding = DataBindingUtil.setContentView(this,R.layout.activity_main);
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         initData();
-        initView();
+        configView();
     }
 
     public void initData() {
@@ -58,9 +57,9 @@ public class MainActivity extends BaseActivity {
         mFragmentList.add(bookFragment);
         mFragmentList.add(ideaFragment);
         mFragmentList.add(meFragment);
-    }
 
-    public void initView(){
+    }
+    public void configView() {
         adapter = new MainActivityViewPagerAdapter(getSupportFragmentManager(),mFragmentList);
         mBinding.vpMain.setAdapter(adapter);
         mBinding.vpMain.setOffscreenPageLimit(4);
@@ -98,6 +97,10 @@ public class MainActivity extends BaseActivity {
             }
         });
     }
+
+
+
+
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {

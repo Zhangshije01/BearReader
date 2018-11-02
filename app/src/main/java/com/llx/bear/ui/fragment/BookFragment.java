@@ -53,8 +53,8 @@ public class BookFragment extends BaseFragment implements BookFragmentContract.B
     @Override
     protected void lazyLoadData() {
         super.lazyLoadData();
+        //获取书架书籍
         mPresenter.loadBookRackData();
-
     }
 
     @Override
@@ -74,18 +74,19 @@ public class BookFragment extends BaseFragment implements BookFragmentContract.B
 
     @Override
     public void showDialog() {
-
+        showLoadingDialog();
     }
 
     @Override
     public void dismissDialog() {
-
+        dissmissLoadingDialog();
     }
 
     @Override
     public void loadError() {
 
     }
+
 
     @Override
     public void showBookRackData(List<BookDetailResultModel> mLists) {

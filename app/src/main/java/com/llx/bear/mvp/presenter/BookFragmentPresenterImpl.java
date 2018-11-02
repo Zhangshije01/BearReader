@@ -27,17 +27,24 @@ public class BookFragmentPresenterImpl extends BasePresenterImpl implements Book
         BearReaderApi.getBookDetail("526e8e3e7cfc087140004df7")
                 .subscribe(new Subscriber<BookDetailResultModel>() {
                     @Override
-                    public void onCompleted() {
+                    public void onStart() {
+                        mView.showDialog();
+                    }
 
+                    @Override
+                    public void onCompleted() {
+                        mView.dismissDialog();
                     }
 
                     @Override
                     public void onError(Throwable e) {
-
+                        mView.dismissDialog();
+                        mView.loadError();
                     }
 
                     @Override
                     public void onNext(BookDetailResultModel bookDetailResultModel) {
+                        mView.dismissDialog();
                         List<BookDetailResultModel> mLists = new ArrayList<BookDetailResultModel>();
                         for (int i = 0; i < 10; i++) {
                             mLists.add(bookDetailResultModel);

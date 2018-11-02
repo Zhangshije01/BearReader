@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.RelativeLayout;
 
 import com.llx.bear.R;
 import com.llx.bear.commen.manager.CacheManager;
@@ -17,10 +19,12 @@ import com.llx.bear.model.resultModel.BookDetailResultModel;
 import com.llx.bear.mvp.contract.BookReaderContract;
 import com.llx.bear.mvp.presenter.BookReaderPresenterImpl;
 import com.llx.bear.ui.base.BaseActivity;
+import com.llx.bear.ui.dialog.BookContentsDialogFragment;
 import com.llx.bear.ui.widget.readview.BaseReadView;
 import com.llx.bear.ui.widget.readview.NoAimWidget;
 import com.llx.bear.ui.widget.readview.OnReadStateChangeListener;
 import com.llx.suandroidbase.commen.LogUtils;
+import com.llx.suandroidbase.commen.ScreenUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +33,7 @@ import java.util.List;
  * @author zhangshijie
  *         阅读页
  */
-public class BookReaderActivity extends BaseActivity implements BookReaderContract.BookReaderView {
+public class BookReaderActivity extends BaseActivity implements BookReaderContract.BookReaderView, View.OnClickListener {
     private ActivityBookReaderBinding mBinding;
     private BookReaderContract.Presenter mPresenter;
     private BookDetailResultModel bookDetailResultModel;
@@ -40,11 +44,13 @@ public class BookReaderActivity extends BaseActivity implements BookReaderContra
     private boolean startRead = false;
     private int currentChapter = 1;
     private static final String INTENT_BEAN = "bookDetailResultModel";
+    private View decorView;
 
     public static void startActivity(Context context, BookDetailResultModel bookDetailResultModel) {
         context.startActivity(new Intent(context, BookReaderActivity.class)
                 .putExtra(INTENT_BEAN, bookDetailResultModel));
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,10 +59,20 @@ public class BookReaderActivity extends BaseActivity implements BookReaderContra
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_book_reader);
         mPresenter = new BookReaderPresenterImpl(this);
+        configView();
         initExtra();
         initAASet();
         initWidget();
+        initEvent();
         mPresenter.getBookMixAToc(bookId);
+    }
+
+    public void configView() {
+        hideStatusBar();
+        decorView = getWindow().getDecorView();
+        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) mBinding.llReaderTop.getLayoutParams();
+        params.topMargin = ScreenUtils.getStatusBarHeight(this) - 2;
+        mBinding.llReaderTop.setLayoutParams(params);
     }
 
     public void initExtra() {
@@ -78,9 +94,8 @@ public class BookReaderActivity extends BaseActivity implements BookReaderContra
         mBinding.flBookReader.addView(mPageWidget);
     }
 
-    @Override
-    public void attachPresenter(BookReaderContract.Presenter presenter) {
-        this.mPresenter = presenter;
+    public void initEvent() {
+        mBinding.ivBookReaderContents.setOnClickListener(this);
     }
 
 
@@ -119,6 +134,19 @@ public class BookReaderActivity extends BaseActivity implements BookReaderContra
         }
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.iv_book_reader_contents:
+                BookContentsDialogFragment fragment = new BookContentsDialogFragment();
+                fragment.show(getSupportFragmentManager(),"");
+                break;
+            default:
+                break;
+        }
+    }
+
+
     private class ReadListener implements OnReadStateChangeListener {
         @Override
         public void onChapterChanged(int chapter) {
@@ -153,11 +181,43 @@ public class BookReaderActivity extends BaseActivity implements BookReaderContra
         @Override
         public void onCenterClick() {
             LogUtils.i("onCenterClick");
+            toggleReadBar();
+
         }
 
         @Override
         public void onFlip() {
         }
+    }
+
+    /**
+     * 处理任务栏的展示和隐藏
+     */
+    public void toggleReadBar() {
+        if (isVisible(mBinding.llReaderTop)) {
+            hidReadBar();
+        } else {
+            showReadBar();
+        }
+    }
+
+    public synchronized void hidReadBar() {
+        goneViews(mBinding.llReaderTop, mBinding.llReaderBottom);
+        hideStatusBar();
+        decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE);
+
+    }
+
+    public synchronized void showReadBar() {
+        visibleViews(mBinding.llReaderTop, mBinding.llReaderBottom);
+        showStatusBar();
+        decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+
+    }
+
+    @Override
+    public void attachPresenter(BookReaderContract.Presenter presenter) {
+        this.mPresenter = presenter;
     }
 
     @Override

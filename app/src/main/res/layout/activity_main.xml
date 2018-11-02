@@ -16,7 +16,7 @@
             android:layout_weight="1"
             app:cancel_scroll="true"
             app:layout_heightPercent="100%"
-            app:layout_widthPercent="100%"></com.llx.bear.ui.widget.BearCancelScrollViewPager>
+            app:layout_widthPercent="100%"/>
 
         <FrameLayout
             android:layout_width="match_parent"
