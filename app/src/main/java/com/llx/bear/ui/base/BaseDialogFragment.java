@@ -17,7 +17,7 @@ import java.lang.reflect.Field;
  */
 
 public class BaseDialogFragment extends DialogFragment{
-    private BaseActivity mActivity;
+    public BaseActivity mActivity;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

@@ -18,6 +18,7 @@ import com.llx.bear.model.resultBean.ChapterRead;
 import com.llx.bear.model.resultModel.BookDetailResultModel;
 import com.llx.bear.mvp.contract.BookReaderContract;
 import com.llx.bear.mvp.presenter.BookReaderPresenterImpl;
+import com.llx.bear.ui.adapter.base.MyMvvmAdapter;
 import com.llx.bear.ui.base.BaseActivity;
 import com.llx.bear.ui.dialog.BookContentsDialogFragment;
 import com.llx.bear.ui.widget.readview.BaseReadView;
@@ -45,6 +46,10 @@ public class BookReaderActivity extends BaseActivity implements BookReaderContra
     private int currentChapter = 1;
     private static final String INTENT_BEAN = "bookDetailResultModel";
     private View decorView;
+    /**
+     * 目录adapter
+     */
+    private MyMvvmAdapter mContentsAdapter;
 
     public static void startActivity(Context context, BookDetailResultModel bookDetailResultModel) {
         context.startActivity(new Intent(context, BookReaderActivity.class)
@@ -73,6 +78,7 @@ public class BookReaderActivity extends BaseActivity implements BookReaderContra
         RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) mBinding.llReaderTop.getLayoutParams();
         params.topMargin = ScreenUtils.getStatusBarHeight(this) - 2;
         mBinding.llReaderTop.setLayoutParams(params);
+
     }
 
     public void initExtra() {
@@ -132,14 +138,31 @@ public class BookReaderActivity extends BaseActivity implements BookReaderContra
                 mPageWidget.jumpToChapter(currentChapter);
             }
         }
+
+        dismissDialog();
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.iv_book_reader_contents:
-                BookContentsDialogFragment fragment = new BookContentsDialogFragment();
-                fragment.show(getSupportFragmentManager(),"");
+                BookContentsDialogFragment fragment = new BookContentsDialogFragment(mChapterList);
+                fragment.setItemClickListener(new MyMvvmAdapter.OnItemClickListener<BookMixAToc.mixToc.Chapters>() {
+                    @Override
+                    public void onItemClick(BookMixAToc.mixToc.Chapters data, int position) {
+                        currentChapter = position + 1;
+                        showDialog();
+                        startRead = false;
+                        readCurrentChapter();
+                        hidReadBar();
+                    }
+
+                    @Override
+                    public void onItemLongClick() {
+
+                    }
+                });
+                fragment.show(getSupportFragmentManager(), "");
                 break;
             default:
                 break;

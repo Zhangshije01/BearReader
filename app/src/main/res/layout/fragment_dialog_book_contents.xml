@@ -9,7 +9,7 @@
         android:orientation="vertical">
 
         <com.llx.bear.ui.widget.BearFontTextView
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:text="搜索"
             android:textSize="16sp"
@@ -18,6 +18,10 @@
             android:layout_marginBottom="10dp"
             android:gravity="center"/>
 
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_book_reader_contents"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
     </LinearLayout>
 </layout>

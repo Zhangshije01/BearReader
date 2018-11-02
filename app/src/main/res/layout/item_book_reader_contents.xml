@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="Chapters"
+            type="com.llx.bear.model.resultBean.BookMixAToc.mixToc.Chapters" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.llx.bear.ui.widget.BearFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@{Chapters.title}"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            app:bearFont="GillSans"/>
+
+    </LinearLayout>
+</layout>
