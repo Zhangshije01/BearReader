@@ -38,7 +38,7 @@ public class BookReaderActivity extends BaseActivity implements BookReaderContra
     private ActivityBookReaderBinding mBinding;
     private BookReaderContract.Presenter mPresenter;
     private BookDetailResultModel bookDetailResultModel;
-    private List<BookMixAToc.mixToc.Chapters> mChapterList = new ArrayList<>();
+    private ArrayList<BookMixAToc.mixToc.Chapters> mChapterList = new ArrayList<>();
     private String bookId;
     private BaseReadView mPageWidget;
     private int curTheme;
@@ -46,11 +46,6 @@ public class BookReaderActivity extends BaseActivity implements BookReaderContra
     private int currentChapter = 1;
     private static final String INTENT_BEAN = "bookDetailResultModel";
     private View decorView;
-    /**
-     * 目录adapter
-     */
-    private MyMvvmAdapter mContentsAdapter;
-
     public static void startActivity(Context context, BookDetailResultModel bookDetailResultModel) {
         context.startActivity(new Intent(context, BookReaderActivity.class)
                 .putExtra(INTENT_BEAN, bookDetailResultModel));
@@ -146,7 +141,7 @@ public class BookReaderActivity extends BaseActivity implements BookReaderContra
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.iv_book_reader_contents:
-                BookContentsDialogFragment fragment = new BookContentsDialogFragment(mChapterList);
+                BookContentsDialogFragment fragment = BookContentsDialogFragment.getInstance(mChapterList,bookDetailResultModel,currentChapter);
                 fragment.setItemClickListener(new MyMvvmAdapter.OnItemClickListener<BookMixAToc.mixToc.Chapters>() {
                     @Override
                     public void onItemClick(BookMixAToc.mixToc.Chapters data, int position) {
@@ -154,7 +149,7 @@ public class BookReaderActivity extends BaseActivity implements BookReaderContra
                         showDialog();
                         startRead = false;
                         readCurrentChapter();
-                        hidReadBar();
+                        hideReadBar();
                     }
 
                     @Override
@@ -218,13 +213,13 @@ public class BookReaderActivity extends BaseActivity implements BookReaderContra
      */
     public void toggleReadBar() {
         if (isVisible(mBinding.llReaderTop)) {
-            hidReadBar();
+            hideReadBar();
         } else {
             showReadBar();
         }
     }
 
-    public synchronized void hidReadBar() {
+    public synchronized void hideReadBar() {
         goneViews(mBinding.llReaderTop, mBinding.llReaderBottom);
         hideStatusBar();
         decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE);

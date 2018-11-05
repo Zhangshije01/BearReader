@@ -15,13 +15,42 @@
  */
 package com.llx.bear.model.resultBean;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.io.Serializable;
 
 /**
  * @author yuyh.
  * @date 2016/8/4.
  */
-public class Base implements Serializable {
+public class Base implements Parcelable {
 
     public boolean ok;
+
+    protected Base(Parcel in) {
+        ok = in.readByte() != 0;
+    }
+
+    public static final Creator<Base> CREATOR = new Creator<Base>() {
+        @Override
+        public Base createFromParcel(Parcel in) {
+            return new Base(in);
+        }
+
+        @Override
+        public Base[] newArray(int size) {
+            return new Base[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeByte((byte) (ok ? 1 : 0));
+    }
 }

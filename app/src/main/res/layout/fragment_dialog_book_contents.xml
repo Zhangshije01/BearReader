@@ -2,6 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+
+        <variable
+            name="BookDetailResultModel"
+            type="com.llx.bear.model.resultModel.BookDetailResultModel" />
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -11,17 +18,59 @@
         <com.llx.bear.ui.widget.BearFontTextView
             android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
             android:text="搜索"
             android:textSize="16sp"
-            app:bearFont="GillSans"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"/>
+            app:bearFont="GillSans" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:background="@color/FAF0E6" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+                <com.llx.bear.ui.widget.BearFontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:text="@{BookDetailResultModel.title}"
+                    android:textSize="14sp"
+                    app:bearFont="GillSansBold" />
+
+                <com.llx.bear.ui.widget.BearFontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@{BookDetailResultModel.author}"
+                    android:textSize="14sp"
+                    app:bearFont="GillSansBold" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/F5F5F5" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_book_reader_contents"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 </layout>

@@ -15,7 +15,8 @@
  */
 package com.llx.bear.model.resultBean;
 
-import java.io.Serializable;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 /**
  * @author yuyh.
@@ -91,7 +92,11 @@ public class ChapterRead extends Base {
 
     public Chapter chapter;
 
-    public static class Chapter implements Serializable {
+    protected ChapterRead(Parcel in) {
+        super(in);
+    }
+
+    public static class Chapter implements Parcelable {
         public String title;
         public String body;
         public String cpContent;
@@ -105,6 +110,36 @@ public class ChapterRead extends Base {
             this.title = title;
             this.body = body;
             this.cpContent = cpContent;
+        }
+
+        protected Chapter(Parcel in) {
+            title = in.readString();
+            body = in.readString();
+            cpContent = in.readString();
+        }
+
+        public static final Creator<Chapter> CREATOR = new Creator<Chapter>() {
+            @Override
+            public Chapter createFromParcel(Parcel in) {
+                return new Chapter(in);
+            }
+
+            @Override
+            public Chapter[] newArray(int size) {
+                return new Chapter[size];
+            }
+        };
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeString(title);
+            dest.writeString(body);
+            dest.writeString(cpContent);
         }
     }
 }

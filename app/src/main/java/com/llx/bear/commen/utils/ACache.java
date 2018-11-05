@@ -22,6 +22,7 @@ import android.graphics.Canvas;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Parcelable;
 
 import com.llx.bear.commen.Constant;
 
@@ -433,6 +434,31 @@ public class ACache {
     // ============= 序列化 数据 读写 ===============
     // =======================================
 
+    public void put(String key, Parcelable value){
+        put(key,value,-1);
+    }
+    public void put(String key, Parcelable value,int saveTime){
+        ByteArrayOutputStream baos = null;
+        ObjectOutputStream oos = null;
+        try {
+            baos = new ByteArrayOutputStream();
+            oos = new ObjectOutputStream(baos);
+            oos.writeObject(value);
+            byte[] data = baos.toByteArray();
+            if (saveTime != -1) {
+                put(key, data, saveTime);
+            } else {
+                put(key, data);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                oos.close();
+            } catch (IOException e) {
+            }
+        }
+    }
 
     /**
      * 保存 Serializable数据 到 缓存中

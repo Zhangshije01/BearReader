@@ -15,7 +15,9 @@
  */
 package com.llx.bear.model.resultBean;
 
-import java.io.Serializable;
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.List;
 
 /**
@@ -42,7 +44,11 @@ public class BookLists extends Base {
 
     public List<BookListsBean> bookLists;
 
-    public class BookListsBean implements Serializable {
+    protected BookLists(Parcel in) {
+        super(in);
+    }
+
+    public class BookListsBean implements Parcelable {
         public String _id;
         public String title;
         public String author;
@@ -51,5 +57,45 @@ public class BookLists extends Base {
         public int collectorCount;
         public String cover;
         public int bookCount;
+
+        protected BookListsBean(Parcel in) {
+            _id = in.readString();
+            title = in.readString();
+            author = in.readString();
+            desc = in.readString();
+            gender = in.readString();
+            collectorCount = in.readInt();
+            cover = in.readString();
+            bookCount = in.readInt();
+        }
+
+        public final Creator<BookListsBean> CREATOR = new Creator<BookListsBean>() {
+            @Override
+            public BookListsBean createFromParcel(Parcel in) {
+                return new BookListsBean(in);
+            }
+
+            @Override
+            public BookListsBean[] newArray(int size) {
+                return new BookListsBean[size];
+            }
+        };
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeString(_id);
+            dest.writeString(title);
+            dest.writeString(author);
+            dest.writeString(desc);
+            dest.writeString(gender);
+            dest.writeInt(collectorCount);
+            dest.writeString(cover);
+            dest.writeInt(bookCount);
+        }
     }
 }

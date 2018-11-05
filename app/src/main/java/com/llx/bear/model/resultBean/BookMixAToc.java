@@ -15,7 +15,9 @@
  */
 package com.llx.bear.model.resultBean;
 
-import java.io.Serializable;
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.List;
 
 /**
@@ -30,7 +32,12 @@ public class BookMixAToc extends Base {
      * link:http://vip.zhuishushenqi.com/toc/577e528e2160421a02d7380d
      */
     public mixToc mixToc;
-    public static class mixToc implements Serializable {
+
+    protected BookMixAToc(Parcel in) {
+        super(in);
+    }
+
+    public static class mixToc implements Parcelable {
         public String _id;
         public String book;
         public String chaptersUpdated;
@@ -45,7 +52,39 @@ public class BookMixAToc extends Base {
 
         public List<Chapters> chapters;
 
-        public static class Chapters implements Serializable {
+        protected mixToc(Parcel in) {
+            _id = in.readString();
+            book = in.readString();
+            chaptersUpdated = in.readString();
+            chapters = in.createTypedArrayList(Chapters.CREATOR);
+        }
+
+        public static final Creator<mixToc> CREATOR = new Creator<mixToc>() {
+            @Override
+            public mixToc createFromParcel(Parcel in) {
+                return new mixToc(in);
+            }
+
+            @Override
+            public mixToc[] newArray(int size) {
+                return new mixToc[size];
+            }
+        };
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeString(_id);
+            dest.writeString(book);
+            dest.writeString(chaptersUpdated);
+            dest.writeTypedList(chapters);
+        }
+
+        public static class Chapters implements Parcelable {
             public String title;
             public String link;
             public String id;
@@ -59,6 +98,42 @@ public class BookMixAToc extends Base {
             public Chapters(String title, String link) {
                 this.title = title;
                 this.link = link;
+            }
+
+            protected Chapters(Parcel in) {
+                title = in.readString();
+                link = in.readString();
+                id = in.readString();
+                currency = in.readInt();
+                unreadble = in.readByte() != 0;
+                isVip = in.readByte() != 0;
+            }
+
+            public static final Creator<Chapters> CREATOR = new Creator<Chapters>() {
+                @Override
+                public Chapters createFromParcel(Parcel in) {
+                    return new Chapters(in);
+                }
+
+                @Override
+                public Chapters[] newArray(int size) {
+                    return new Chapters[size];
+                }
+            };
+
+            @Override
+            public int describeContents() {
+                return 0;
+            }
+
+            @Override
+            public void writeToParcel(Parcel dest, int flags) {
+                dest.writeString(title);
+                dest.writeString(link);
+                dest.writeString(id);
+                dest.writeInt(currency);
+                dest.writeByte((byte) (unreadble ? 1 : 0));
+                dest.writeByte((byte) (isVip ? 1 : 0));
             }
         }
     }
