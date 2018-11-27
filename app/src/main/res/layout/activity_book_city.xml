@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.llx.bear.ui.widget.SwipeableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/swipeable_layout"
+    tools:context=".ui.activity.BookCityActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/ic_bg"
+        android:scaleType="centerCrop"/>
+
+</com.llx.bear.ui.widget.SwipeableLayout>

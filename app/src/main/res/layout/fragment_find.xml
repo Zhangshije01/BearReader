@@ -49,6 +49,7 @@
                     android:background="@color/F5F5F5" />
 
                 <com.llx.bear.ui.widget.BearFontTextView
+                    android:id="@+id/tv_find_book_city"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="14dp"

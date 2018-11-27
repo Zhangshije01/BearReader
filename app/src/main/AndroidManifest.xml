@@ -34,8 +34,9 @@
 
                 <data android:mimeType="text/plain" />
             </intent-filter>
-
         </activity>
+        <activity android:name=".ui.activity.BookCityActivity"
+            android:theme="@style/SwipeableTheme"></activity>
     </application>
 
 </manifest>

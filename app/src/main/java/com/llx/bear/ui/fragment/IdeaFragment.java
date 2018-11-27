@@ -34,7 +34,7 @@ public class IdeaFragment extends BaseFragment {
 
     @Override
     public void configView() {
-
+        //test
     }
 
     @Override
