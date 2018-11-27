@@ -13,11 +13,13 @@ import com.llx.bear.ui.base.BaseFragment;
 
 /**
  * 想法
+ *
  * @author zhangshijie
  */
 public class IdeaFragment extends BaseFragment {
 
     private FragmentIdeaBinding binding;
+
     public IdeaFragment() {
         // Required empty public constructor
     }
@@ -26,7 +28,7 @@ public class IdeaFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_idea,container,false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_idea, container, false);
         return binding.getRoot();
     }
 
@@ -39,4 +41,5 @@ public class IdeaFragment extends BaseFragment {
     protected void lazyLoadData() {
         super.lazyLoadData();
     }
+
 }

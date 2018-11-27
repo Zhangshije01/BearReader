@@ -29,7 +29,9 @@ public class MainActivity extends BaseActivity {
 
     private long lastExitTime = 0;
     private long exitWaitTime = 1500;
-    /**当前页面*/
+    /**
+     * 当前页面
+     */
     private int currentPage = 0;
     private FindFragment findFragment;
     private BookFragment bookFragment;
@@ -46,7 +48,6 @@ public class MainActivity extends BaseActivity {
         initData();
         configView();
     }
-
     public void initData() {
         findFragment = new FindFragment();
         bookFragment = new BookFragment();
@@ -59,8 +60,9 @@ public class MainActivity extends BaseActivity {
         mFragmentList.add(meFragment);
 
     }
+
     public void configView() {
-        adapter = new MainActivityViewPagerAdapter(getSupportFragmentManager(),mFragmentList);
+        adapter = new MainActivityViewPagerAdapter(getSupportFragmentManager(), mFragmentList);
         mBinding.vpMain.setAdapter(adapter);
         mBinding.vpMain.setOffscreenPageLimit(4);
         mBinding.vpMain.setCurrentItem(currentPage, false);
@@ -98,10 +100,6 @@ public class MainActivity extends BaseActivity {
         });
     }
 
-
-
-
-
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (System.currentTimeMillis() - lastExitTime > exitWaitTime) {
@@ -112,6 +110,5 @@ public class MainActivity extends BaseActivity {
         }
         return true;
     }
-
 
 }

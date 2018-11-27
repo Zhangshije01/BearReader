@@ -9,6 +9,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:fitsSystemWindows="true">
+
         <com.llx.bear.ui.widget.BearCancelScrollViewPager
             android:id="@+id/vp_main"
             android:layout_width="match_parent"
