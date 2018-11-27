@@ -5,12 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/swipeable_layout"
+    android:background="@color/white"
     tools:context=".ui.activity.BookCityActivity">
 
-    <ImageView
+    <com.llx.bear.ui.widget.BearFontTextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@mipmap/ic_bg"
-        android:scaleType="centerCrop"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="fsadfaaaaaaaaaaaaaasdfasddfsdsdafsdfsadfsadfaaaaaaaaaaaaaasdfasddfsdsdafsdfsafsadfaaaaaaaaaaaaaasdfasddfsdsdafsdfsafsadfaaaaaaaaaaaaaasdfasddfsdsdafsdfsafsadfaaaaaaaaaaaaaasdfasddfsdsdafsdfsafsadfaaaaaaaaaaaaaasdfasddfsdsdafsdfsafsadfaaaaaaaaaaaaaasdfasddfsdsdafsdfsafsadfaaaaaaaaaaaaaasdfasddfsdsdafsdfsafsadfaaaaaaaaaaaaaasdfasddfsdsdafsdfsafsadfaaaaaaaaaaaaaasdfasddfsdsdafsdfsafsadfaaaaaaaaaaaaaasdfasddfsdsdafsdfsafsadfaaaaaaaaaaaaaasdfasddfsdsdafsdfsafsadfaaaaaaaaaaaaaasdfasddfsdsdafsdfsafsadfaaaaaaaaaaaaaasdfasddfsdsdafsdfsafsadfaaaaaaaaaaaaaasdfasddfsdsdafsdfsafsadfaaaaaaaaaaaaaasdfasddfsdsdafsdfsafsadfaaaaaaaaaaaaaasdfasddfsdsdafsdfsafsadfaaaaaaaaaaaaaasdfasddfsdsdafsdfsafsad"
+        />
 
 </com.llx.bear.ui.widget.SwipeableLayout>
